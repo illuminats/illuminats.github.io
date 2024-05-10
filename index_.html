@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Connect.a Mentorship Hub</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="https://use.typekit.net/cge5yim.css">
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://use.typekit.net/your-kit-id.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+
+</head>
+<body>
+
+  <div class="top-bar">
+    <div class="logo">
+        <a href="index_.html"> 
+            <img src="purple.png" alt="Logo">
+        </a>
+    </div>
+        <nav class="navbar">
+            <div class="menu-container">
+                <a href="index_.html" class="menu-item">Home</a>
+                <a href="#find-a-mentor" class="menu-item">Find a mentor</a>
+                <a href="#resources-section" class="menu-item">Resources</a>
+                <a href="Profile.html" class="menu-item">Profile</a>
+            </div>
+        </nav>
+        <div class="auth">
+            <a href="#" class="auth-link" onclick="showLoginModal()">Log in</a>
+        </div>
+      </div>
+    </div>
+    <div class="container welcome-section py-5">
+      <div class="row">
+          <div class="col-md-6 d-flex align-items-center">
+              <div class="welcome-text text-center">
+                  <!-- Navigation Buttons -->
+                  <div class="slide-navigation" id="nav-buttons">
+                    
+                      <button onclick="showSlide(1)">Mentee</button>
+                      <button onclick="showSlide(2)">Mentor</button>
+                  </div>
+                  <div id="slideshow-container">
+                      <!-- Initial welcome slide -->
+                      <div class="slide active">
+                          <h1 class="text-white">Join our inclusive community!</h1>
+                          <h3 class="text-white">Our platform empowers women of all backgrounds and ages to find mentors and become mentors themselves. Join our inclusive community where women uplift women, creating meaningful connections and fostering growth in STEM fields.</h3>
+                          <h3 class="text-white">Welcome to Connect.a Mentorship Hub – where mentorship knows no boundaries.</h3>
+                        </div>
+                      <!-- Mentee slide -->
+                      <div class="slide">
+                          
+                          <h2 class="text-white">Build an epic career with expert mentors today. Get the confidence you need to follow your dreams and get inspired by other women.</h2>
+                          <button class="cta-button">Join the Community</button>
+                          <a href="index_.html" class="return-link">Back</a>
+                      </div>
+                      <!-- Mentor slide -->
+                      <div class="slide">
+                          
+                          <h2 class="text-white">Your next chapter, made possible by mentoring. Build confidence as a leader, grow your network, and define your legacy. Become a Mentor.</h2>
+                          <button class="cta-button">Become a Mentor</button>
+                          <a href="index_.html" class="return-link">Back</a>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <div class="col-md-6">
+              <canvas id="canvas3d" class="img-fluid rounded"></canvas>
+          </div>
+      </div>
+  </div>
+  
+  <!---The pop up for sign-up is here -->
+
+<div id="signupModal" class="signup-modal">
+  <!-- Modal content -->
+  <div class="signup-modal-content">
+      <span class="signup-close">&times;</span>
+      <h2>Sign Up</h2>
+      <form id="signupForm">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required>
+          
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required>
+          
+          <label for="role">Role:</label>
+          <select id="role" name="role">
+              <option value="mentee">Mentee</option>
+              <option value="mentor">Mentor</option>
+          </select>
+          
+          <label for="age">Age:</label>
+          <input type="number" id="age" name="age" required>
+          
+          <label for="area">Area of Interest/Expertise:</label>
+          <input type="text" id="area" name="area">
+          
+          <button type="submit">Sign Up</button>
+      </form>
+  </div>
+</div>
+
+
+  
+  
+<div id="find-a-mentor">
+    <!-- Content mentors  -->
+
+    <section class="mentors-section">
+        <div class="container">
+          <h1 class="section-title">Mentors to meet</h1>
+          <div class="row">
+            
+      
+            <!-- Mentor Profile Card for Jamie Parker -->
+            <div class="col-lg-3 col-md-3 col-sm-6">
+              <div class="profile-card">
+                <img src="path-to-jamie-parker-image.jpg" alt="Jamie Parker" class="profile-image">
+                <h3 class="mentor-name">Jamie Parker</h3>
+                <p class="mentor-title">Chemical Engineer at PetroChem Innovations</p>
+                <button class="btn-meet" onclick="showCalendarModal()">Book a meeting</button>
+
+              </div>
+            </div>
+      
+            <!-- Mentor Profile Card for Dr. Maya Rodriguez -->
+            <div class="col-lg-3 col-md-3 col-sm-6">
+              <div class="profile-card">
+                <img src="path-to-maya-rodriguez-image.jpg" alt="Dr. Maya Rodriguez" class="profile-image">
+                <h3 class="mentor-name">Dr. Maya Rodriguez</h3>
+                <p class="mentor-title">Senior Software Engineer at Neural Solutions</p>
+                <button class="btn-meet" onclick="showCalendarModal()">Book a meeting</button>
+
+              </div>
+            </div>
+      
+            <!-- Mentor Profile Card for Dr. Lily Chen -->
+            <div class="col-lg-3 col-md-3 col-sm-6">
+              <div class="profile-card">
+                <img src="path-to-lily-chen-image.jpg" alt="Dr. Lily Chen" class="profile-image">
+                <h3 class="mentor-name">Dr. Lily Chen</h3>
+                <p class="mentor-title">Senior Electrical Engineer at ElectraTecnical</p>
+                <button class="btn-meet" onclick="showCalendarModal()">Book a meeting</button>
+
+              </div>
+            </div>
+      
+            <!-- Mentor Profile Card for Casey Jordan -->
+            <div class="col-lg-3 col-md-3 col-sm-6">
+              <div class="profile-card">
+                <img src="path-to-casey-jordan-image.jpg" alt="Casey Jordan" class="profile-image">
+                <h3 class="mentor-name">Casey Jordan</h3>
+                <p class="mentor-title">Lead Software Developer at NextGen Robotics</p>
+                <button class="btn-meet" onclick="showCalendarModal()">Book a meeting</button>
+
+              </div>
+            </div>
+             </div>
+          
+          <!-- Hidden rows -->
+          
+          <div class="row hidden-cards-container" style="display: none;">
+            <div class="col-lg-3 col-md-3 col-sm-6">
+                <div class="profile-card">
+                  <img src="Professoravathompson.jpg" alt="Casey Jordan" class="profile-image">
+                  <h3 class="mentor-name">Professor Ava Thompson </h3>
+                  <p class="mentor-title">Head of Computer Science Department Lead</p>
+                  <button class="btn-meet" onclick="showCalendarModal()">Book a meeting</button>
+
+                </div>
+              </div>
+                 
+           <div class="col-lg-3 col-md-3 col-sm-6">
+              <div class="profile-card">
+                  <img src="Gracelima.jpg" alt="Casey Jordan" class="profile-image">
+                  <h3 class="mentor-name">Grace Lima </h3>
+                  <p class="mentor-title">Lead AI Researcher at TinySteps Techstudios</p>
+                  <button class="btn-meet" onclick="showCalendarModal()">Book a meeting</button>
+
+                </div> 
+            </div>
+          
+            <div class="col-lg-3 col-md-3 col-sm-6">
+                <div class="profile-card">
+                  <img src="Rachelkim.jpg" alt="Casey Jordan" class="profile-image">
+                  <h3 class="mentor-name">Dr. Rachel Kim  </h3>
+                  <p class="mentor-title">Chief Technology Officer at Cybernetic Systems </p>
+                  <button class="btn-meet" onclick="showCalendarModal()">Book a meeting</button>
+
+                </div>
+              </div>
+          
+        
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="profile-card">
+                  <img src="Sophia Nguyen.jpg" alt="Casey Jordan" class="profile-image">
+                  <h3 class="mentor-name">Dr. Sophia Nguyen</h3>
+                  <p class="mentor-title"> Principal Biomedical at Merigdam Biotech Inc.</p>
+                  <button class="btn-meet" onclick="showCalendarModal()">Book a meeting</button>
+
+                </div>
+              </div>
+          </div>    
+       <!-- Closing the row -->
+      </div> <!-- Closing the container -->
+        
+        <!-- See More Button -->
+        <div class="text-center mt-3">
+          <button class="btn see-more-button">See More</button>
+        </div>
+        
+      </section> <!-- Closing the mentors-section -->
+
+       <!-- RESOURCES -->
+
+
+<div id="resources-section" class="=resources-section">
+  <div class="container">
+  <h1 class="resources-title">Resources</h1>
+  <img src="ResourcesImage.jpg" alt="Descriptive text for the image" class="resources-image">
+ 
+  <div class="second-part-resource-cards">
+    <div class="resource-card">
+        <h2>Breaking Barriers</h2>
+        <p class="price"> Women Leading the Way in STEM</p>
+        <p> This article showcases the achievements of women who are pioneering new advancements in STEM fields. Highlighting their unique challenges and successes, the piece aims to inspire and encourage more women to pursue careers in science, technology, engineering, and mathematics. </p>
+        <a href="#" class="btn-resource">→</a>
+    </div>
+
+    <div class="resource-card">
+        <h2>The Future of AI</h2>
+        <p class="price">Ethics and Innovations</p>
+        <p>Explore the ethical implications of artificial intelligence and its impact on modern industries. This article discusses the balance between innovation and the moral considerations of AI deployment, with insights from leading experts in the field. Key topics include privacy concerns, automation in employment, and the role of regulatory bodies.</p>
+        <a href="#" class="btn-resource">→</a>
+    </div>
+    <div class="resource-card">
+      <h2>Climate Change Solutions</h2>
+      <p class="price"> STEM at the Forefront</p>
+      <p>This article delves into how STEM professionals are tackling climate change through innovative technologies and sustainable practices. It highlights recent advancements in renewable energy, carbon capture technologies, and the critical role of environmental engineers. The piece emphasizes collaboration across global scientific communities.</p>
+      <a href="#" class="btn-resource">→</a>
+  </div>
+  <div class="resource-card">
+    <h2>The Rise of Cybersecurity</h2>
+    <p class="price">Safeguarding Our Digital World</p>
+    <p>With increasing cyber threats, this article examines the growing field of cybersecurity. It outlines the latest strategies and technologies being developed to protect sensitive information and systems. Features include interviews with cybersecurity experts and tips on how to pursue a career in this vital sector.</p>
+    <a href="#" class="btn-resource">→</a>
+</div>
+<div class="resource-card">
+  <h2>Revolutionizing Healthcare</h2>
+  <p class="price">Biotechnology's Latest Advances</p>
+  <p>This article covers the latest breakthroughs in biotechnology that are transforming healthcare, from gene editing to personalized medicine. It highlights how these advancements are being used to treat previously incurable diseases, with a focus on the ethical implications and the future potential of biotech in medicine.</p>
+  <a href="#" class="btn-resource">→</a>
+</div>
+</div>
+
+        </div>
+        
+      </div>
+    </div>
+  </div>
+
+
+<!-- log in pop-up -->
+<!-- Login Modal -->
+<div class="login-modal-background" id="loginModal" style="display: none;">
+  <div class="login-form-container">
+    <span class="close-button" onclick="closeLoginModal()">×</span><!-- Close button to hide the modal -->
+      <form action="/submit-your-form-handler" method="post">
+          <h2>Log In</h2>
+          <div class="input-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required>
+          </div>
+          <div class="input-group">
+              <label for="password">Password</label>
+              <input type="password" id="password" name="password" required>
+          </div>
+          <button type="submit">Log In</button>
+          <h5>Don't have an account? <a href="javascript:void(0);" id="signupLink">Sign up here</a></h5>
+
+      </form>
+  </div>
+</div>
+
+<!-- booking meeting pop-up -->
+<!-- Calendar Modal -->
+<div class="calendar-modal-background modal-background" style="display: none;">
+  <div class="calendar-modal-content">
+      <h2>Select a Date and Time</h2>
+      <input type="date" id="meeting-date">
+      <input type="time" id="meeting-time">
+      <button class="btn-confirm" onclick="confirmBooking()">Confirm</button>
+  </div>
+</div>
+
+<!-- Confirmation Modal -->
+<div id="confirmationModal" class="modal-background" style="display: none;">
+  <div class="modal-content">
+      <h4>Booking Confirmed</h4>
+      <h5 id="confirmationDetails">Your booking has been confirmed for <span id="confirmedDate"></span> at <span id="confirmedTime"></span>.</h5>
+      <h5>An email confirmation will be sent to your email address.</h5>
+      <button class="closeConfirmationButton" onclick="closeConfirmationModal(event)">Close</button>
+
+  </div>
+</div>
+
+
+  <footer class="footer-container">
+    <div class="footer-content">
+      <p>© 2024 Connect.a - All rights reserved.</p>
+      <div class="social-icons">
+          <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+          <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+  </div>
+  
+</footer>
+
+<!-- line animation -->
+<svg 
+    width="1000" 
+    height="2000" 
+    viewBox="0 0 1000 2000" 
+    fill="none" 
+    xmlns="http://www.w3.org/2000/svg"
+    class="line"
+>
+    <path d="M113 14C-162.5 124 360.86 338.947 666.43 359.473C972 380 899.319 544.973 899.319 544.973C899.319 544.973 831 723.5 417.5 593C4 462.5 -78 760.5 245 794.5C245 794.5 762.728 850.888 899.319 964.5C1035.91 1078.11 782.5 1446 782.5 1188C782.5 930 1078.25 1314.31 210.889 1370.7C-4.49982 1384.71 -20.0031 1591.53 58.0001 1672C218.786 1811.75 366.569 1657.67 655 1558.5C752 1525.15 996.75 1521.09 915.201 1630.74C833.651 1740.4 210.889 1776.5 286.068 1885.77C361.248 1995.04 898.792 1808 915.201 1946.5"
+    stroke="#C9B8FF" 
+    stroke-width="30" 
+    stroke-linejoin="round"
+    stroke-linecap="round"
+    />
+</svg>
+<canvas3d>
+    <a class="logo" href="https://spline.design"></a>
+    <script type="module">
+      import { Application } from './runtime.js';
+      const canvas = document.getElementById('canvas3d');
+      const app = new Application(canvas);
+      app.load('./scene.splinecode');
+    </script>
+<script src="scroll.js"></script>    
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygi6v9Zq+XslJ2bCcUw7s3FtBQy27Gu7XaT1JvcdZzlr4MCBjdJ+WN6KxdKQE6Fs" crossorigin="anonymous"></script>
+	</canvas3d>
+</div>
+</body>
+</html>

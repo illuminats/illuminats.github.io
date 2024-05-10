@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comprehensive Profile Page</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f4f4f8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .profile-card {
+            background: #ffffff;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 15px;
+            width: 70%;
+            max-width: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            overflow: hidden;
+            padding: 20px;
+            margin-top: 5%;
+        }
+        .profile-image {
+            width: 150px; /* Size of the image */
+            height: 150px;
+            border-radius: 50%; /* Makes the image circular */
+            object-fit: cover; /* Ensures the image covers the area without distortion */
+            margin-top: 20px; /* Adjusts the image to be a bit lower */
+            border: 4px solid white; /* Makes it blend with the background */
+        }
+        .profile-info {
+            padding: 20px;
+            text-align: center;
+        }
+        .name {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .title {
+            font-size: 18px;
+            color: #555;
+            margin-top: 5px;
+        }
+        .details {
+            font-size: 16px;
+            color: #666;
+            line-height: 1.4;
+            margin-top: 10px;
+        }
+        .section {
+            width: 100%;
+            margin-top: 20px;
+        }
+        .section-title {
+            font-size: 20px;
+            color: #421EB7;
+            margin-bottom: 10px;
+        }
+        .list {
+            list-style-type: none;
+            padding: 0;
+        }
+        .list-item {
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="profile-card">
+        <img src="studentpic.jpg" alt="Isabella Rossi" class="profile-image">
+        <div class="profile-info">
+            <div class="name">Isabella Rossi</div>
+            <div class="title">Physics Major - University of Milan</div>
+            <div class="details">Age: 21 | Milan, Italy</div>
+            <div class="details">Hobbies: Travel, Classical Music, Reading</div>
+        </div>
+        <div class="section">
+            <div class="section-title">Education</div>
+            <ul class="list">
+                <li class="list-item">BSc Physics - University of Milan</li>
+                <li class="list-item">Erasmus Program Participant - University of Paris</li>
+            </ul>
+        </div>
+        <div class="section">
+            <div class="section-title">Projects</div>
+            <ul class="list">
+                <li class="list-item">Research on Quantum Mechanics and its applications.</li>
+                <li class="list-item">Development of a new algorithm for particle tracking in high-energy physics experiments.</li>
+            </ul>
+        </div>
+        <div class="section">
+            <div class="section-title">Languages</div>
+            <ul class="list">
+                <li class="list-item">Italian - Native</li>
+                <li class="list-item">English - Fluent</li>
+                <li class="list-item">French - Intermediate</li>
+            </ul>
+        </div>
+        <div class="section">
+            <div class="section-title">Professional Skills</div>
+            <ul class="list">
+                <li class="list-item">Data Analysis with Python and MATLAB</li>
+                <li class="list-item">Statistical Modeling</li>
+                <li class="list-item">Technical Writing</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
